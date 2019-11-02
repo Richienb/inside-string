@@ -1,41 +1,83 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Inside string [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/inside-string/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/inside-string)
 
-My awesome module.
+Check if a string is inside another string but not on the edge.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/inside-string.png)](https://npmjs.com/package/inside-string)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install inside-string
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const insideString = require("inside-string");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+insideString("abc", "a");
+//=> false
+
+insideString("abc", "b");
+//=> true
+
+insideString("abc", "c");
+//=> false
+
+insideString("abcdef", "c", 2); // Setting edge to 2
+//=> true
+
+insideString("abcdef", "e", 2, 1); // Setting left edge to 2 and right edge to 1
+//=> true
 ```
 
 ## API
 
-### theModule(input, options?)
+### insideString(string, stringToCheck, sides?)
 
-#### input
+#### string
 
 Type: `string`
 
-Lorem ipsum.
+The string to search.
 
-#### options
+#### stringToCheck
 
-Type: `object`
+Type: `string`
 
-##### postfix
+The string to check for.
 
-Type: `string`\
-Default: `rainbows`
+#### sides
 
-Lorem ipsum.
+Type: `number`\
+Default: `1`
+
+The amount of characters inwards from the left and right edges of the string to search.
+
+### insideString(string, stringToCheck, leftSide?, rightSide?)
+
+#### string
+
+Type: `string`
+
+The string to search.
+
+#### stringToCheck
+
+Type: `string`
+
+The string to check for.
+
+#### leftSide
+
+Type: `number`\
+Default: `1`
+
+The amount of characters inward from the left edge of the string to search.
+
+#### rightSide
+
+Type: `number`\
+Default: `leftSide`
+
+The amount of characters inward from the right edge of the string to search.
