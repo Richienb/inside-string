@@ -1,6 +1,6 @@
 {
     "name": "inside-string",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Check if a string is inside another string but not on the edge.",
     "repository": "https://github.com/Richienb/inside-string.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
